@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias dir="dir --color=tty"
+alias \:q="exit"
 
 # Environment Variables
 export DISPLAY=127.0.0.1:0.0
