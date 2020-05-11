@@ -22,6 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'sophacles/vim-processing'
+Plugin 'justinmk/vim-sneak'
 
 call vundle#end()
 filetype plugin indent on
@@ -31,6 +32,10 @@ set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
+
+
+" ==================== Sneak ========================
+let g:sneak#label = 1
 
 " ================ Indentation ======================
 
