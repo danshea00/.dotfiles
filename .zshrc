@@ -1,6 +1,6 @@
 export ZSH="/home/dansh/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
+ZSH_THEME="bira"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -98,3 +98,6 @@ source /home/dansh/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Node Version Manager
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+. /home/dansh/torch/install/bin/torch-activate
