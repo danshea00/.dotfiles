@@ -23,6 +23,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'dense-analysis/ale'
 Plugin 'sophacles/vim-processing'
 Plugin 'justinmk/vim-sneak'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
