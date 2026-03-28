@@ -14,18 +14,19 @@ set nowb
 
 " ================== Vundle =========================
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'scrooloose/nerdtree'
-Plugin 'itchyny/lightline.vim'
-Plugin 'dense-analysis/ale'
-Plugin 'sophacles/vim-processing'
-Plugin 'justinmk/vim-sneak'
-Plugin 'airblade/vim-gitgutter'
+call plug#begin()
+Plug 'prabirshrestha/vim-lsp'
+Plug 'morhetz/gruvbox'
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'dense-analysis/ale'
+Plug 'sophacles/vim-processing'
+Plug 'justinmk/vim-sneak'
+Plug 'airblade/vim-gitgutter'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on
 
 " ================= Lightline =======================
@@ -43,8 +44,8 @@ let g:sneak#label = 1
 set autoindent
 set smartindent
 set smarttab
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=3
+set softtabstop=3
 set tabstop=2
 set expandtab
 
@@ -79,10 +80,19 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
 " ================= Theme ============================
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
 set bg=dark
 
 
 " ================ Mappings ==========================
 map <C-o> :NERDTreeToggle<CR>
+
+
+" ================ Telescope ==========================
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
