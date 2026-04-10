@@ -12,7 +12,7 @@ set nobackup
 set nowb
 
 
-" ================== Vundle =========================
+" ================== Plug =========================
 filetype off
 call plug#begin()
 Plug 'prabirshrestha/vim-lsp'
@@ -25,6 +25,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'airblade/vim-gitgutter'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
+Plug 'github/copilot.vim'
 
 call plug#end()
 filetype plugin indent on
@@ -95,4 +96,3 @@ nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
