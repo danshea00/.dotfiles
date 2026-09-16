@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+# Restore the full-desktop size every time a switcher window gains focus.
+yabai -m signal --remove fullscreen-on-focus 2>/dev/null || true
+yabai -m signal --add label=fullscreen-on-focus event=window_focused \
+    app='^(iTerm2|Code|Google Chrome|Spotify)$' \
+    action='yabai -m window "$YABAI_WINDOW_ID" --grid 1:1:0:0:1:1'

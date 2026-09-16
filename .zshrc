@@ -18,16 +18,11 @@ export EDITOR="$VISUAL"
 
 source $ZSH/oh-my-zsh.sh
 
-d=~/.dircolors
-test -r $d && eval "$(dircolors $d)"
-
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-alias ls="lsd"
-
-source <(fzf --zsh)
-source <(zoxide init zsh)
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:/usr/local/aarch64-none-elf/bin/"
+export PATH="$PATH:$HOME/TS/djawula-rs/deps/board/qemu_virt_aarch64/debug/bin/"

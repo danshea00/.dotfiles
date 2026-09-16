@@ -12,22 +12,26 @@ set nobackup
 set nowb
 
 
-" ================== Plug =========================
+" ================== Vundle =======================
 filetype off
-call plug#begin()
-Plug 'prabirshrestha/vim-lsp'
-Plug 'morhetz/gruvbox'
-Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
-Plug 'dense-analysis/ale'
-Plug 'sophacles/vim-processing'
-Plug 'justinmk/vim-sneak'
-Plug 'airblade/vim-gitgutter'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
-Plug 'github/copilot.vim'
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'morhetz/gruvbox'
+Plugin 'scrooloose/nerdtree'
+Plugin 'itchyny/lightline.vim'
+Plugin 'dense-analysis/ale'
+Plugin 'sophacles/vim-processing'
+Plugin 'justinmk/vim-sneak'
+Plugin 'airblade/vim-gitgutter'
+if has('nvim')
+  Plugin 'nvim-lua/plenary.nvim'
+  Plugin 'nvim-telescope/telescope.nvim', { 'rev': '0.1.8' }
+endif
+Plugin 'github/copilot.vim'
 
-call plug#end()
+call vundle#end()
 filetype plugin indent on
 
 " ================= Lightline =======================
@@ -92,7 +96,9 @@ map <C-o> :NERDTreeToggle<CR>
 
 " ================ Telescope ==========================
 " Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+if has('nvim')
+  nnoremap <leader>ff <cmd>Telescope find_files<cr>
+  nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+  nnoremap <leader>fb <cmd>Telescope buffers<cr>
+  nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+endif
