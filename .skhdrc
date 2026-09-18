@@ -1,6 +1,0 @@
-# Instant app switching — Option + number
-# open -a launches the app if it isn't running, and raises/focuses it if it is.
-alt - 1 : open -a "iTerm"
-alt - 2 : open -a "Visual Studio Code"
-alt - 3 : open -a "Google Chrome"
-alt - 4 : open -a "Spotify"
