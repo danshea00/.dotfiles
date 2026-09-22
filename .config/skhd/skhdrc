@@ -1,7 +1,6 @@
 alt - 1 : wid=$(yabai -m query --windows | jq -r '.[] | select(.app=="iTerm2").id' | head -n 1); if [ -n "$wid" ]; then yabai -m window "$wid" --space $(yabai -m query --spaces --space | jq -r '.index') && sleep 0.1 && yabai -m window "$wid" --focus; else open -a "iTerm"; fi
-alt - 2 : wid=$(yabai -m query --windows | jq -r '.[] | select(.app=="Code").id' | head -n 1); if [ -n "$wid" ]; then yabai -m window "$wid" --space $(yabai -m query --spaces --space | jq -r '.index') && sleep 0.1 && yabai -m window "$wid" --focus; else open -a "Visual Studio Code"; fi
-alt - 3 : wid=$(yabai -m query --windows | jq -r '.[] | select(.app=="Google Chrome").id' | head -n 1); if [ -n "$wid" ]; then yabai -m window "$wid" --space $(yabai -m query --spaces --space | jq -r '.index') && sleep 0.1 && yabai -m window "$wid" --focus; else open -a "Google Chrome"; fi
-alt - 4 : wid=$(yabai -m query --windows | jq -r '.[] | select(.app=="Spotify").id' | head -n 1); if [ -n "$wid" ]; then yabai -m window "$wid" --space $(yabai -m query --spaces --space | jq -r '.index') && sleep 0.1 && yabai -m window "$wid" --focus; else open -a "Spotify"; fi
+alt - 2 : wid=$(yabai -m query --windows | jq -r '.[] | select(.app=="Google Chrome").id' | head -n 1); if [ -n "$wid" ]; then yabai -m window "$wid" --space $(yabai -m query --spaces --space | jq -r '.index') && sleep 0.1 && yabai -m window "$wid" --focus; else open -a "Google Chrome"; fi
+alt - 3 : wid=$(yabai -m query --windows | jq -r '.[] | select(.app=="Spotify").id' | head -n 1); if [ -n "$wid" ]; then yabai -m window "$wid" --space $(yabai -m query --spaces --space | jq -r '.index') && sleep 0.1 && yabai -m window "$wid" --focus; else open -a "Spotify"; fi
 
 alt - h : yabai -m window --focus west  || yabai -m display --focus west
 alt - j : yabai -m window --focus south || yabai -m display --focus south

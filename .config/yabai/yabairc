@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
-yabai -m signal --remove fullscreen-on-focus 2>/dev/null || true
-yabai -m signal --add label=fullscreen-on-focus event=window_focused \
-    app='^(iTerm2|Code|Google Chrome|Spotify)$' \
-    action='yabai -m window "$YABAI_WINDOW_ID" --grid 1:1:0:0:1:1'
-yabai -m config window_animation_duration 0.0
-yabai -m config focus_follows_mouse on
-yabai -m config mouse_follows_focus on
+yabai -m config focus_follows_mouse autofocus
+yabai -m config layout stack
+yabai -m config top_padding 0
+yabai -m config bottom_padding 0
+yabai -m config left_padding 0
+yabai -m config right_padding 0
+yabai -m config window_gap 0
