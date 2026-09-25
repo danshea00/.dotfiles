@@ -63,34 +63,3 @@ require("lazy").setup({
 }, {
     change_detection = { notify = false },
 })
-
--- Language servers must be installed and available on PATH.
-vim.lsp.config("clangd", {
-    cmd = { "clangd" },
-    filetypes = { "c", "cpp", "objc", "objcpp", "cuda" },
-    root_markers = { ".clangd", "compile_commands.json", "compile_flags.txt", ".git" },
-})
-vim.lsp.config("rust_analyzer", {
-    cmd = { "rust-analyzer" },
-    filetypes = { "rust" },
-    root_markers = { "Cargo.toml", "rust-project.json", ".git" },
-})
-for name, command in pairs({ clangd = "clangd", rust_analyzer = "rust-analyzer" }) do
-    if vim.fn.executable(command) == 1 then
-        vim.lsp.enable(name)
-    end
-end
-
-vim.api.nvim_create_autocmd("LspAttach", {
-    group = vim.api.nvim_create_augroup("user_lsp", { clear = true }),
-    callback = function(event)
-        local function map(lhs, rhs, desc)
-            vim.keymap.set("n", lhs, rhs, { buffer = event.buf, desc = desc })
-        end
-        map("gd", vim.lsp.buf.definition, "Go to definition")
-        map("gr", function() require("telescope.builtin").lsp_references() end, "Find references")
-        map("<leader>rn", vim.lsp.buf.rename, "Rename symbol")
-        map("[g", function() vim.diagnostic.jump({ count = -1, float = true }) end, "Previous diagnostic")
-        map("]g", function() vim.diagnostic.jump({ count = 1, float = true }) end, "Next diagnostic")
-    end,
-})
